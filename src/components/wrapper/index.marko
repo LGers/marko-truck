@@ -1,0 +1,54 @@
+import data from "../../data.json";
+
+<!-- $ const searchTypes = data.stock.map((truck) => truck.type); -->
+$ const searchTypes = [...new Set(data.stock.map((truck) => truck.type))];
+$ const searchAxleConfiguration = [...new Set(data.stock.map((truck) => truck.axle_configuration))];
+
+class {
+  onCreate() {
+  this.max = 50;
+  this.state = 
+    {
+      count: 1,
+      nav: data.nav,
+      breadcrumbs: data.breadcrumbs,
+    };
+  }
+  increment() {
+    if (this.state.count < this.max) {
+      this.emit('change', ++this.state.count);
+    }
+    if (this.state.count === this.max) {
+      this.emit('max', this.state.count);
+    }
+  }
+}
+
+<div.wrapper>
+  <div.container>
+    <TruckHeader />
+    <Breadcrumbs breadcrumbs=data.breadcrumbs />
+    <main>
+      <p>
+        count: ${state.count}
+      </p>
+      <p>
+        ${searchTypes}
+        ${console.log(searchTypes)}
+      </p>
+      <!-- <button on-click('increment')>increment</button> -->
+      <search-form 
+        increment=component.increment.bind(component)
+        searchTypes=searchTypes
+        axleConfig=searchAxleConfiguration
+        total=data.stock.length
+      />
+
+      <p>Edit <code>./pages/index.marko</code> and save to reload.</p>
+      <a href="https://markojs.com/docs/getting-started">
+        Learn Marko
+      </a>
+    </main>
+  <!-- </mouse-mask> -->
+  </div>
+</div>

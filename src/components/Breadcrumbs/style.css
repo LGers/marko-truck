@@ -1,0 +1,38 @@
+.breadcrumbs {
+  text-decoration: none;
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 14px;
+  color: #2F80ED;
+}
+
+.breadcrumbs ul {
+  margin: 0;
+  padding: 15px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  gap: 8px;
+}
+
+.breadcrumbs ulli a:nth-last-child(2) {
+  color: #000000;
+}
+
+.breadcrumbs li {
+  color: #2F80ED;
+  list-style-type: none;
+}
+
+.breadcrumbs li:nth-last-child(1) {
+  color: #000000;
+}
+
+.breadcrumbs li a {
+  color: #2F80ED;
+}
+
+.breadcrumbs li.arrow {
+  color: black;
+}
+/*# sourceMappingURL=style.css.map */

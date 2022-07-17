@@ -1,0 +1,27 @@
+class {
+  onCreate (input) {
+    this.parentHandler = input.increment;
+  }
+  onClick (e, el) {
+    this.parentHandler()
+  }
+}
+
+<aside.search-form>
+  <p.search-result>${input.total} results found</p>
+
+  <div.search-type>
+    <div.search__title>
+      <p>Truck type</p>
+      <img src="../../assets/svg/arrow.svg" alt="arrow">
+    </div>
+    <for|type| of=input.searchTypes>
+      <div.checkbox-container>
+        <input.checkbox type="checkbox" name=type value=type id=type>
+        <label for=type>${type}</label>
+      </div>
+    </for>
+  </div>
+  <!-- <button on-click('onClick')>Search</button> -->
+  <t-button on-click('onClick') text="Search">Search</t-button>
+</aside>
