@@ -1,0 +1,22 @@
+.card {
+  & img {
+    max-width: 224px;
+  }
+
+  &-info {
+    width: 100%;
+    &__header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+  }
+
+  display: flex;
+  gap: 16px;
+  background-color: #ffffff;
+  padding: 16px;
+  &-item {
+    padding: 16px;
+  }
+}

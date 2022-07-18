@@ -1,0 +1,14 @@
+footer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 126.3%;
+  color: #828282;
+
+  & span {
+    color: #2F80ED;
+  }
+}

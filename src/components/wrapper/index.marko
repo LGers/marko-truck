@@ -1,6 +1,5 @@
 import data from "../../data.json";
 
-<!-- $ const searchTypes = data.stock.map((truck) => truck.type); -->
 $ const searchTypes = [...new Set(data.stock.map((truck) => truck.type))];
 $ const searchAxleConfiguration = [...new Set(data.stock.map((truck) => truck.axle_configuration))];
 
@@ -26,29 +25,29 @@ class {
 
 <div.wrapper>
   <div.container>
-    <TruckHeader />
+    <TruckHeader nav=data.nav/>
     <Breadcrumbs breadcrumbs=data.breadcrumbs />
-    <main>
-      <p>
-        count: ${state.count}
-      </p>
-      <p>
-        ${searchTypes}
-        ${console.log(searchTypes)}
-      </p>
-      <!-- <button on-click('increment')>increment</button> -->
+    <h1>Trucs</h1>
+    <div.content>
       <search-form 
         increment=component.increment.bind(component)
         searchTypes=searchTypes
         axleConfig=searchAxleConfiguration
         total=data.stock.length
       />
-
-      <p>Edit <code>./pages/index.marko</code> and save to reload.</p>
-      <a href="https://markojs.com/docs/getting-started">
-        Learn Marko
-      </a>
-    </main>
-  <!-- </mouse-mask> -->
+      <main>
+        <div.cards>
+          <for|card| of=data.stock>
+            <card-item card=card/>
+          </for>
+        </div>
+        <div>
+          <for|text| of=data.page_text>
+            <p>${text.content}</p>
+          </for>
+        </div>
+      </main>
+    </div>
+    <t-footer />
   </div>
 </div>
